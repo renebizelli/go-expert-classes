@@ -1,0 +1,11 @@
+mode: set
+taxgo/tax.go:5.43,7.17 1 1
+taxgo/tax.go:7.17,9.3 1 1
+taxgo/tax.go:11.2,11.20 1 1
+taxgo/tax.go:11.20,13.3 1 1
+taxgo/tax.go:15.2,15.12 1 1
+taxgo/tax.go:18.44,22.17 2 1
+taxgo/tax.go:22.17,24.3 1 1
+taxgo/tax.go:26.2,26.20 1 1
+taxgo/tax.go:26.20,28.3 1 1
+taxgo/tax.go:30.2,30.12 1 1

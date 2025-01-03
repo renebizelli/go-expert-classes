@@ -1,0 +1,15 @@
+{
+  "cep": "03660-010",
+  "logradouro": "Rua Madalena Júlia",
+  "complemento": "",
+  "unidade": "",
+  "bairro": "Vila Ré",
+  "localidade": "São Paulo",
+  "uf": "SP",
+  "estado": "São Paulo",
+  "regiao": "Sudeste",
+  "ibge": "3550308",
+  "gia": "1004",
+  "ddd": "11",
+  "siafi": "7107"
+}
