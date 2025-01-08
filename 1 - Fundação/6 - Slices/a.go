@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"regexp"
+	"strings"
+)
 
 func main() {
 
@@ -28,5 +32,8 @@ func main() {
 	s = append(s, 11)
 	fmt.Printf("\nLen: %d | cap: %d | s: %v", len(s), cap(s), s)
 	fmt.Printf("\nLen: %d | cap: %d | s: %v", len(s), cap(s[5:]), s[5:])
+
+	re := regexp.MustCompile("[0-9]+")
+	fmt.Println(strings.Join(re.FindAllString("1abc123def987asdf", -1)[:], ""))
 
 }
