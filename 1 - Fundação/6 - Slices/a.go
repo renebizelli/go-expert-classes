@@ -33,7 +33,32 @@ func main() {
 	fmt.Printf("\nLen: %d | cap: %d | s: %v", len(s), cap(s), s)
 	fmt.Printf("\nLen: %d | cap: %d | s: %v", len(s), cap(s[5:]), s[5:])
 
+	sliceJoin()
+
+	remove()
+
+}
+
+func sliceJoin() {
+	fmt.Println("\n--------------------------------------------------------------------")
 	re := regexp.MustCompile("[0-9]+")
 	fmt.Println(strings.Join(re.FindAllString("1abc123def987asdf", -1)[:], ""))
+}
+
+func remove() {
+
+	fmt.Println("\n--------------------------------------------------------------------")
+
+	events := []string{"Evento1", "Evento2", "Evento3", "Evento4"}
+
+	fmt.Printf("values %v \n", events)
+	fmt.Printf("[:2] %v \n", events[:2])
+	fmt.Printf("[2:] %v \n", events[2:])
+	fmt.Printf("[:0] %v \n", events[:0])
+	fmt.Printf("[1:] %v \n", events[1:])
+
+	events = append(events[:0], events[1:]...) //	events = events[1:]
+
+	fmt.Printf("new values %v \n", events)
 
 }
