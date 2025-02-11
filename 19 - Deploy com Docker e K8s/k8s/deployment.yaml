@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: renebizelli/renebizelli_aula_deploy:latest
+        resources:
+          limits:
+            cpu: 100m
+            memory: 32Mi
+
+        startupProbe:  # inicialização
+          httpGet: 
+            path: /
+            port: 8080
+          periodSeconds: 10  # verifica a cada 10s
+          failureThreshold: 10 # 10 tentativas antes de considerar falha
+
+        readinessProbe:  # pronto para receber tráfego, ou para de mandar tráfego para o pod problemático
+          httpGet: 
+            path: /
+            port: 8080
+          periodSeconds: 10  # verifica a cada 10s
+          failureThreshold: 2 # 2 tentativas antes de considerar falha   
+          timeoutSeconds: 5  # tempo máximo para responder         
+
+        livenessProbe:  # verifica se o container está vivo, se há falha, o container é reiniciado.
+          httpGet: 
+            path: /
+            port: 8080
+          periodSeconds: 10  # verifica a cada 10s
+          failureThreshold: 2 # 2 tentativas antes de considerar falha   
+          timeoutSeconds: 5  # tempo máximo para responder    
+          successThreshold: 1 # 1 sucesso para considerar o container vivo     
+
+        ports:
+        - containerPort: 8080

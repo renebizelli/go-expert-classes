@@ -1,4 +1,4 @@
-services:
+docker-composeservices:
 
    mysql:
       image: mysql
