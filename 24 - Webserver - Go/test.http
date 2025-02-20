@@ -1,0 +1,21 @@
+
+GET http://localhost:8080/books/1
+
+
+###
+
+GET http://localhost:8080/books/dir/a/b/c/d
+
+
+###
+
+GET http://localhost:8080/books/
+
+
+### 
+
+GET http://localhost:8080/books/precedence/latest
+
+### 
+
+GET http://localhost:8080/books/precedence/latestX
